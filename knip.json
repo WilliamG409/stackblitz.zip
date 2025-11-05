@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "workspaces": {
+    "app": {
+      "ignoreDependencies": [
+        "stackblitz-zip"
+      ],
+      "entry": [
+        "routes/**"
+      ]
+    }
+  }
+}
