@@ -2,6 +2,9 @@ import { nitro } from 'nitro/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  css: {
+    lightningcss: {},
+  },
   plugins: [
     nitro({
       config: {
