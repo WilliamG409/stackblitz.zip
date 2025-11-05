@@ -106,6 +106,7 @@ main {
   text-align: left;
 }
 
+.url-example h2,
 .url-example h3 {
   font-size: 0.9rem;
   color: var(--text-muted);
