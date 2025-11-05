@@ -7,7 +7,7 @@ export default defineConfig({
       config: {
         routeRules: {
           '/': { prerender: true },
-          '/**': { swr: 60 },
+          '/**': { isr: 60 },
         },
       },
     }),
