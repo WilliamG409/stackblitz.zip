@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Publish the package as 'stackblitz-clone' alias
- * Run this after publishing 'stackblitz-zip'
- */
-
 import { execSync } from 'node:child_process'
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
