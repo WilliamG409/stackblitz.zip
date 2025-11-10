@@ -107,12 +107,12 @@ URL.revokeObjectURL(url)
 ## Features
 
 - **Universal** - works in Node.js, browsers, and edge runtimes
-- Built with [tsdown](https://tsdown.dev) and [JSZip](https://stuk.github.io/jszip/)
+- Built with [tsdown](https://tsdown.dev) and [client-zip](https://github.com/Touffy/client-zip)
 - [Nitro](https://nitro.build) web service at [stackblitz.zip](https://stackblitz.zip)
-- No browser automation - parses embedded Redux store directly
+- Fetches project data directly from StackBlitz API
 - Zip slip protection and security validations
 - Configurable size limits and timeouts
-- Web API streaming (ArrayBuffer/Blob)
+- Web API streaming (Response/ArrayBuffer/Blob)
 
 > [!NOTE]
 > The APIs use Web standards (fetch, ArrayBuffer, Blob) but direct fetching from stackblitz.com may be blocked by CORS.
