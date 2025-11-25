@@ -15,7 +15,6 @@ export default defineConfig({
         },
         routeRules: {
           '/': { isr: true },
-          '/**': { isr: 60 },
         },
       },
     }),
